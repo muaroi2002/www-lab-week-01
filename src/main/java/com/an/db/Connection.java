@@ -15,6 +15,7 @@ public class Connection {
             instance = new Connection();
         return instance;
     }
+
     public EntityManagerFactory getEntityManagerFactory() {
         return emf;
     }
