@@ -57,21 +57,21 @@
     </style>
 </head>
 <body>
-<div class="login-container">
-    <h2>Đăng Nhập</h2>
-    <form action="process-login.php" method="post">
-        <div class="form-group">
-            <label for="username">Tên đăng nhập:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Mật khẩu:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div class="form-group">
-            <button type="submit">Đăng Nhập</button>
-        </div>
-    </form>
+<form action="ControlServlet", method="post", style="border: 1px solid black; width: 300px; height: 250px; border-radius: 5%; padding: 20px;">
+    <h1 align="center">Login</h1>
+    <div class="row" >
+        <label class="col1">Email: </label>
+        <input type="text" name="email" placeholder="Username" value="nhatan@gmail.com" /><br><br>
+    </div>
+    <div class="row">
+        <label class="col1">Password: </label>
+        <input type="password" name="password" placeholder="Password" value="123" /><br><br>
+    </div>
+    <div class="row">
+        <input type="submit" value="login" name = "action" style="margin: 80px"/>
+        <%--		<input type="reset" value="Reset" />--%>
+    </div>
+</form>
 </div>
 </body>
 </html>

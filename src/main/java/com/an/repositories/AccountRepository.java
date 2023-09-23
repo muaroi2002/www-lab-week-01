@@ -18,7 +18,7 @@ public class AccountRepository {
         em = Connection.getInstance().getEntityManagerFactory().createEntityManager();
     }
 
-    public List<Account> getAll() throws SQLException, ClassNotFoundException {
+    public List<Account> getAll() {
         EntityTransaction tr = em.getTransaction();
         tr.begin();
         try {
@@ -101,12 +101,12 @@ public class AccountRepository {
         }
     }
 
-    public Account checkLogin(String userName, String password){
+    public Account checkLogin(String email, String password){
         EntityTransaction tr = em.getTransaction();
         tr.begin();
         try {
-            String sql = "select * from account where email = ? and password = ? and 'status' = 1";
-            Account acc = (Account) em.createNativeQuery(sql, Account.class).setParameter(1, userName).setParameter(2,password).getSingleResult();
+            String sql = "select * from account where email = ?1 and password = ?2";
+            Account acc = (Account) em.createNativeQuery(sql, Account.class).setParameter(1, email).setParameter(2,password).getSingleResult();
             tr.commit();
             return acc;
         }catch (Exception e) {

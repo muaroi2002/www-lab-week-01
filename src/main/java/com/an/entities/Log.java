@@ -67,7 +67,12 @@ public class Log {
         this.notes = notes;
     }
 
-    public Log() {
+    public Log(String id) {
+    }
+
+    public Log(String accountID, Timestamp loginTime) {
+        this.accountID = accountID;
+        this.loginTime = loginTime;
     }
 
     @Override
