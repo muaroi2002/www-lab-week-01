@@ -56,4 +56,18 @@ public class LogRepository {
         }
         return null;
     }
+    public boolean readLog(Log log ){
+        EntityTransaction transaction = em.getTransaction();
+        transaction.begin();
+        try {
+
+            em.persist(log);
+            transaction.commit();
+            return true;
+        }catch (Exception ex){
+            ex.printStackTrace();
+            transaction.rollback();
+        }
+        return false;
+    }
 }

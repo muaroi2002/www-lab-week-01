@@ -57,7 +57,7 @@
     </style>
 </head>
 <body>
-<form action="ControlServlet", method="post", style="border: 1px solid black; width: 300px; height: 250px; border-radius: 5%; padding: 20px;">
+<form action="controler", method="post", style="border: 1px solid black; width: 300px; height: 250px; border-radius: 5%; padding: 20px;">
     <h1 align="center">Login</h1>
     <div class="row" >
         <label class="col1">Email: </label>

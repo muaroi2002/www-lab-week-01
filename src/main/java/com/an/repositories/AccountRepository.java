@@ -115,4 +115,20 @@ public class AccountRepository {
         }
         return null;
     }
+
+    public Account getAccountByEmailAndPassword(String email, String password){
+        EntityTransaction transaction = em.getTransaction();
+        transaction.begin();
+        try {
+            String sql = "SELECT a FROM account WHERE email ='" + email + "' and password = '" + password + "'";
+            System.out.println(sql);
+            Account a = (Account) em.createNativeQuery("SELECT * FROM `account` WHERE email ='"+email+"' and password = '"+password+"'", Account.class).getSingleResult();
+            transaction.commit();
+            return  a;
+        }catch (Exception ex){
+            ex.printStackTrace();
+            transaction.rollback();
+        }
+        return null;
+    }
 }

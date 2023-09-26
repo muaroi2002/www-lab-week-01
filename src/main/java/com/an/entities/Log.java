@@ -2,7 +2,8 @@ package com.an.entities;
 
 import jakarta.persistence.*;
 
-import java.sql.Timestamp;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "log")
@@ -13,9 +14,9 @@ public class Log {
     @Column(columnDefinition = "VARCHAR(50)")
     private String accountID;
     @Column(columnDefinition = "DATETIME")
-    private Timestamp loginTime;
+    private Date loginTime;
     @Column(columnDefinition = "DATETIME")
-    private Timestamp logoutTime;
+    private Date logoutTime;
     @Column(columnDefinition = "VARCHAR(250)")
     private String notes;
 
@@ -35,19 +36,19 @@ public class Log {
         this.accountID = accountID;
     }
 
-    public Timestamp getLoginTime() {
+    public Date getLoginTime() {
         return loginTime;
     }
 
-    public void setLoginTime(Timestamp loginTime) {
+    public void setLoginTime(Date loginTime) {
         this.loginTime = loginTime;
     }
 
-    public Timestamp getLogoutTime() {
+    public Date getLogoutTime() {
         return logoutTime;
     }
 
-    public void setLogoutTime(Timestamp logoutTime) {
+    public void setLogoutTime(Date logoutTime) {
         this.logoutTime = logoutTime;
     }
 
@@ -59,7 +60,7 @@ public class Log {
         this.notes = notes;
     }
 
-    public Log(long iD, String accountID, Timestamp loginTime, Timestamp logoutTime, String notes) {
+    public Log(long iD, String accountID, Date loginTime, Date logoutTime, String notes) {
         this.iD = iD;
         this.accountID = accountID;
         this.loginTime = loginTime;
@@ -67,10 +68,10 @@ public class Log {
         this.notes = notes;
     }
 
-    public Log(String id) {
+    public Log(Account user01, Date date, String id, String fullname) {
     }
 
-    public Log(String accountID, Timestamp loginTime) {
+    public Log(String accountID, Date loginTime) {
         this.accountID = accountID;
         this.loginTime = loginTime;
     }
